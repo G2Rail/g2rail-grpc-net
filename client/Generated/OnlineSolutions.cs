@@ -24,78 +24,66 @@ namespace G2Rail.Protobuf {
     static OnlineSolutionsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxQcm90b3MvT25saW5lU29sdXRpb25zLnByb3RvEgZnMnJhaWwiYwoNU2Vh",
-            "cmNoUmVxdWVzdBIMCgRmcm9tGAEgASgJEgoKAnRvGAIgASgJEgwKBGRhdGUY",
-            "AyABKAkSDAoEdGltZRgEIAEoCRINCgVhZHVsdBgFIAEoDRINCgVjaGlsZBgG",
-            "IAEoDSIlChBBc3luY0tleVJlc3BvbnNlEhEKCWFzeW5jX2tleRgBIAEoCSI1",
-            "CiBPbmxpbmVTb2x1dGlvbnNBc3luY1F1ZXJ5UmVxdWVzdBIRCglhc3luY19r",
-            "ZXkYASABKAkiTQoXT25saW5lU29sdXRpb25zUmVzcG9uc2USMgoRcmFpbHdh",
-            "eV9zb2x1dGlvbnMYASADKAsyFy5nMnJhaWwuUmFpbHdheVNvbHV0aW9uImkK",
-            "D1JhaWx3YXlTb2x1dGlvbhIgCgdyYWlsd2F5GAEgASgLMg8uZzJyYWlsLlJh",
-            "aWx3YXkSDwoHbG9hZGluZxgCIAEoCBIjCglzb2x1dGlvbnMYAyADKAsyEC5n",
-            "MnJhaWwuU29sdXRpb24iFwoHUmFpbHdheRIMCgRjb2RlGAEgASgJIjcKB1N0",
-            "YXRpb24SDAoEbmFtZRgBIAEoCRIMCgRjb2RlGAIgASgJEhAKCGhlbHBfdXJs",
-            "GAMgASgJIikKCER1cmF0aW9uEgwKBGhvdXIYASABKA0SDwoHbWludXRlcxgC",
-            "IAEoDSK4AQoIU29sdXRpb24SHQoEZnJvbRgBIAEoCzIPLmcycmFpbC5TdGF0",
-            "aW9uEhsKAnRvGAIgASgLMg8uZzJyYWlsLlN0YXRpb24SEQoJZGVwYXJ0dXJl",
-            "GAMgASgJEhYKDnRyYW5zZmVyX3RpbWVzGAQgASgNEiIKCGR1cmF0aW9uGAUg",
-            "ASgLMhAuZzJyYWlsLkR1cmF0aW9uEiEKCHNlY3Rpb25zGAYgAygLMg8uZzJy",
-            "YWlsLlNlY3Rpb24ikAEKB1NlY3Rpb24SFAoMY2Fycmllcl9jb2RlGAEgASgJ",
-            "EhsKE2NhcnJpZXJfZGVzY3JpcHRpb24YAiABKAkSFAoMY2Fycmllcl9pY29u",
-            "GAMgASgJEh0KBm9mZmVycxgEIAMoCzINLmcycmFpbC5PZmZlchIdCgZ0cmFp",
-            "bnMYBSADKAsyDS5nMnJhaWwuVHJhaW4i7QEKBU9mZmVyEgwKBGNvZGUYASAB",
-            "KAkSEwoLZGVzY3JpcHRpb24YAiABKAkSDgoGZGV0YWlsGAMgASgJEhAKCGhl",
-            "bHBfdXJsGAQgASgJEhMKC3Jlc3RyaWN0aW9uGAUgASgJEhMKC3RpY2tldF90",
-            "eXBlGAYgASgJEhEKCXNlYXRfdHlwZRgHIAEoCRITCgtyZWZ1bmRfdHlwZRgI",
-            "IAEoCRIVCg1jb25maXJtX2FnYWluGAkgASgJEhMKC2NoYW5nZV90eXBlGAog",
-            "ASgJEiEKCHNlcnZpY2VzGAsgAygLMg8uZzJyYWlsLlNlcnZpY2UipAYKB1Nl",
-            "cnZpY2USHAoFcHJpY2UYHyABKAsyDS5nMnJhaWwuUHJpY2USKQoSYXZlcmFn",
-            "ZV91bml0X3ByaWNlGCAgASgLMg0uZzJyYWlsLlByaWNlEicKCWF2YWlsYWJs",
-            "ZRghIAEoCzIULmcycmFpbC5BdmFpbGFiaWxpdHkSDAoEY29kZRgBIAEoCRIT",
-            "CgtkZXNjcmlwdGlvbhgCIAEoCRIOCgZkZXRhaWwYAyABKAkSFQoNZmVhdHVy",
-            "ZV9waG90bxgEIAEoCRIUCgxib29raW5nX2NvZGUYBSABKAkSFAoMYm9va2lu",
-            "Z190eXBlGAYgASgJEhAKCGhhc193aWZpGAcgASgJEhgKEGhhc19wb3dlcl9v",
-            "dXRsZXQYCCABKAkSHAoUaGFzX2Fpcl9jb25kaXRpb25pbmcYCSABKAkSIAoY",
-            "aGFzX2VudGVydGFpbm1lbnRfc3lzdGVtGAogASgJEhkKEWhhc19yZWFkaW5n",
-            "X2xpZ2h0GAsgASgJEhgKEHNlYXRfcmVzZXJ2YXRpb24YDCABKAkSEQoJc2Vh",
-            "dF90eXBlGA0gASgJEh8KF251bWJlcl9vZl9zZWF0c19wZXJfcm93GA4gASgJ",
-            "EhAKCGJlZF90eXBlGA8gASgJEhMKC3RvaWxldF90eXBlGBAgASgJEhkKEWZv",
-            "b2Rfc2VydmljZV90eXBlGBEgASgJEhMKC2Zvb2RfZHJpbmtzGBIgASgJEhUK",
-            "DWZyZWVfbWVnYXppbmUYEyABKAkSFAoMY2xlYW5pbmdfa2l0GBQgASgJEhMK",
-            "C3dlbGNvbWVfa2l0GBUgASgJEhYKDmxvdW5nZV9zZXJ2aWNlGBYgASgJEhAK",
-            "CGNoZWNrX2luGBcgASgJEhMKC3NpbGVudF9hcmVhGBggASgJEhUKDXByaXZh",
-            "dGVfY2FiaW4YGSABKAkSEQoJcGxheV9hcmVhGBogASgJEhUKDWJpY3ljbGVf",
-            "c3BhY2UYGyABKAkSGwoTZGlzYWJsZWRfZmFjaWxpdGllcxgcIAEoCRIUCgxt",
-            "b3JuaW5nX2NhbGwYHSABKAkSEAoIaGVscF91cmwYHiABKAkiHQoMQXZhaWxh",
-            "YmlsaXR5Eg0KBXNlYXRzGAEgASgNIigKBVByaWNlEhAKCGN1cnJlbmN5GAEg",
-            "ASgJEg0KBWNlbnRzGAIgASgNIpcBCgVUcmFpbhIdCgRmcm9tGAEgASgLMg8u",
-            "ZzJyYWlsLlN0YXRpb24SGwoCdG8YAiABKAsyDy5nMnJhaWwuU3RhdGlvbhIO",
-            "CgZudW1iZXIYAyABKAkSDAoEdHlwZRgEIAEoCRIQCghoZWxwX3VybBgFIAEo",
-            "CRIRCglkZXBhcnR1cmUYBiABKAkSDwoHYXJyaXZhbBgHIAEoCTK0AQoPT25s",
-            "aW5lU29sdXRpb25zEjkKBlNlYXJjaBIVLmcycmFpbC5TZWFyY2hSZXF1ZXN0",
-            "GhguZzJyYWlsLkFzeW5jS2V5UmVzcG9uc2USZgoZUXVlcnlBc3luY09ubGlu",
-            "ZVNvbHV0aW9ucxIoLmcycmFpbC5PbmxpbmVTb2x1dGlvbnNBc3luY1F1ZXJ5",
-            "UmVxdWVzdBofLmcycmFpbC5PbmxpbmVTb2x1dGlvbnNSZXNwb25zZUJDCg9j",
-            "b20uZ3JwYy5nMnJhaWxCFE9ubGluZVNvbHV0aW9uc1Byb3RvUAFaBmcycmFp",
-            "bKoCD0cyUmFpbC5Qcm90b2J1ZmIGcHJvdG8z"));
+            "ChxQcm90b3MvT25saW5lU29sdXRpb25zLnByb3RvEgZnMnJhaWwaE1Byb3Rv",
+            "cy9Db21tb24ucHJvdG8iYwoNU2VhcmNoUmVxdWVzdBIMCgRmcm9tGAEgASgJ",
+            "EgoKAnRvGAIgASgJEgwKBGRhdGUYAyABKAkSDAoEdGltZRgEIAEoCRINCgVh",
+            "ZHVsdBgFIAEoDRINCgVjaGlsZBgGIAEoDSI1CiBPbmxpbmVTb2x1dGlvbnNB",
+            "c3luY1F1ZXJ5UmVxdWVzdBIRCglhc3luY19rZXkYASABKAkiTQoXT25saW5l",
+            "U29sdXRpb25zUmVzcG9uc2USMgoRcmFpbHdheV9zb2x1dGlvbnMYASADKAsy",
+            "Fy5nMnJhaWwuUmFpbHdheVNvbHV0aW9uImkKD1JhaWx3YXlTb2x1dGlvbhIg",
+            "CgdyYWlsd2F5GAEgASgLMg8uZzJyYWlsLlJhaWx3YXkSDwoHbG9hZGluZxgC",
+            "IAEoCBIjCglzb2x1dGlvbnMYAyADKAsyEC5nMnJhaWwuU29sdXRpb24iKQoI",
+            "RHVyYXRpb24SDAoEaG91chgBIAEoDRIPCgdtaW51dGVzGAIgASgNIrgBCghT",
+            "b2x1dGlvbhIdCgRmcm9tGAEgASgLMg8uZzJyYWlsLlN0YXRpb24SGwoCdG8Y",
+            "AiABKAsyDy5nMnJhaWwuU3RhdGlvbhIRCglkZXBhcnR1cmUYAyABKAkSFgoO",
+            "dHJhbnNmZXJfdGltZXMYBCABKA0SIgoIZHVyYXRpb24YBSABKAsyEC5nMnJh",
+            "aWwuRHVyYXRpb24SIQoIc2VjdGlvbnMYBiADKAsyDy5nMnJhaWwuU2VjdGlv",
+            "biKQAQoHU2VjdGlvbhIUCgxjYXJyaWVyX2NvZGUYASABKAkSGwoTY2Fycmll",
+            "cl9kZXNjcmlwdGlvbhgCIAEoCRIUCgxjYXJyaWVyX2ljb24YAyABKAkSHQoG",
+            "b2ZmZXJzGAQgAygLMg0uZzJyYWlsLk9mZmVyEh0KBnRyYWlucxgFIAMoCzIN",
+            "LmcycmFpbC5UcmFpbiLtAQoFT2ZmZXISDAoEY29kZRgBIAEoCRITCgtkZXNj",
+            "cmlwdGlvbhgCIAEoCRIOCgZkZXRhaWwYAyABKAkSEAoIaGVscF91cmwYBCAB",
+            "KAkSEwoLcmVzdHJpY3Rpb24YBSABKAkSEwoLdGlja2V0X3R5cGUYBiABKAkS",
+            "EQoJc2VhdF90eXBlGAcgASgJEhMKC3JlZnVuZF90eXBlGAggASgJEhUKDWNv",
+            "bmZpcm1fYWdhaW4YCSABKAkSEwoLY2hhbmdlX3R5cGUYCiABKAkSIQoIc2Vy",
+            "dmljZXMYCyADKAsyDy5nMnJhaWwuU2VydmljZSKkBgoHU2VydmljZRIcCgVw",
+            "cmljZRgfIAEoCzINLmcycmFpbC5QcmljZRIpChJhdmVyYWdlX3VuaXRfcHJp",
+            "Y2UYICABKAsyDS5nMnJhaWwuUHJpY2USJwoJYXZhaWxhYmxlGCEgASgLMhQu",
+            "ZzJyYWlsLkF2YWlsYWJpbGl0eRIMCgRjb2RlGAEgASgJEhMKC2Rlc2NyaXB0",
+            "aW9uGAIgASgJEg4KBmRldGFpbBgDIAEoCRIVCg1mZWF0dXJlX3Bob3RvGAQg",
+            "ASgJEhQKDGJvb2tpbmdfY29kZRgFIAEoCRIUCgxib29raW5nX3R5cGUYBiAB",
+            "KAkSEAoIaGFzX3dpZmkYByABKAkSGAoQaGFzX3Bvd2VyX291dGxldBgIIAEo",
+            "CRIcChRoYXNfYWlyX2NvbmRpdGlvbmluZxgJIAEoCRIgChhoYXNfZW50ZXJ0",
+            "YWlubWVudF9zeXN0ZW0YCiABKAkSGQoRaGFzX3JlYWRpbmdfbGlnaHQYCyAB",
+            "KAkSGAoQc2VhdF9yZXNlcnZhdGlvbhgMIAEoCRIRCglzZWF0X3R5cGUYDSAB",
+            "KAkSHwoXbnVtYmVyX29mX3NlYXRzX3Blcl9yb3cYDiABKAkSEAoIYmVkX3R5",
+            "cGUYDyABKAkSEwoLdG9pbGV0X3R5cGUYECABKAkSGQoRZm9vZF9zZXJ2aWNl",
+            "X3R5cGUYESABKAkSEwoLZm9vZF9kcmlua3MYEiABKAkSFQoNZnJlZV9tZWdh",
+            "emluZRgTIAEoCRIUCgxjbGVhbmluZ19raXQYFCABKAkSEwoLd2VsY29tZV9r",
+            "aXQYFSABKAkSFgoObG91bmdlX3NlcnZpY2UYFiABKAkSEAoIY2hlY2tfaW4Y",
+            "FyABKAkSEwoLc2lsZW50X2FyZWEYGCABKAkSFQoNcHJpdmF0ZV9jYWJpbhgZ",
+            "IAEoCRIRCglwbGF5X2FyZWEYGiABKAkSFQoNYmljeWNsZV9zcGFjZRgbIAEo",
+            "CRIbChNkaXNhYmxlZF9mYWNpbGl0aWVzGBwgASgJEhQKDG1vcm5pbmdfY2Fs",
+            "bBgdIAEoCRIQCghoZWxwX3VybBgeIAEoCSIdCgxBdmFpbGFiaWxpdHkSDQoF",
+            "c2VhdHMYASABKA0ytAEKD09ubGluZVNvbHV0aW9ucxI5CgZTZWFyY2gSFS5n",
+            "MnJhaWwuU2VhcmNoUmVxdWVzdBoYLmcycmFpbC5Bc3luY0tleVJlc3BvbnNl",
+            "EmYKGVF1ZXJ5QXN5bmNPbmxpbmVTb2x1dGlvbnMSKC5nMnJhaWwuT25saW5l",
+            "U29sdXRpb25zQXN5bmNRdWVyeVJlcXVlc3QaHy5nMnJhaWwuT25saW5lU29s",
+            "dXRpb25zUmVzcG9uc2VCQgoOaW8uZ3JwYy5nMnJhaWxCFE9ubGluZVNvbHV0",
+            "aW9uc1Byb3RvUAFaBmcycmFpbKoCD0cyUmFpbC5Qcm90b2J1ZmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::G2Rail.Protobuf.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.SearchRequest), global::G2Rail.Protobuf.SearchRequest.Parser, new[]{ "From", "To", "Date", "Time", "Adult", "Child" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.AsyncKeyResponse), global::G2Rail.Protobuf.AsyncKeyResponse.Parser, new[]{ "AsyncKey" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.OnlineSolutionsAsyncQueryRequest), global::G2Rail.Protobuf.OnlineSolutionsAsyncQueryRequest.Parser, new[]{ "AsyncKey" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.OnlineSolutionsResponse), global::G2Rail.Protobuf.OnlineSolutionsResponse.Parser, new[]{ "RailwaySolutions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.RailwaySolution), global::G2Rail.Protobuf.RailwaySolution.Parser, new[]{ "Railway", "Loading", "Solutions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Railway), global::G2Rail.Protobuf.Railway.Parser, new[]{ "Code" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Station), global::G2Rail.Protobuf.Station.Parser, new[]{ "Name", "Code", "HelpUrl" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Duration), global::G2Rail.Protobuf.Duration.Parser, new[]{ "Hour", "Minutes" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Solution), global::G2Rail.Protobuf.Solution.Parser, new[]{ "From", "To", "Departure", "TransferTimes", "Duration", "Sections" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Section), global::G2Rail.Protobuf.Section.Parser, new[]{ "CarrierCode", "CarrierDescription", "CarrierIcon", "Offers", "Trains" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Offer), global::G2Rail.Protobuf.Offer.Parser, new[]{ "Code", "Description", "Detail", "HelpUrl", "Restriction", "TicketType", "SeatType", "RefundType", "ConfirmAgain", "ChangeType", "Services" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Service), global::G2Rail.Protobuf.Service.Parser, new[]{ "Price", "AverageUnitPrice", "Available", "Code", "Description", "Detail", "FeaturePhoto", "BookingCode", "BookingType", "HasWifi", "HasPowerOutlet", "HasAirConditioning", "HasEntertainmentSystem", "HasReadingLight", "SeatReservation", "SeatType", "NumberOfSeatsPerRow", "BedType", "ToiletType", "FoodServiceType", "FoodDrinks", "FreeMegazine", "CleaningKit", "WelcomeKit", "LoungeService", "CheckIn", "SilentArea", "PrivateCabin", "PlayArea", "BicycleSpace", "DisabledFacilities", "MorningCall", "HelpUrl" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Availability), global::G2Rail.Protobuf.Availability.Parser, new[]{ "Seats" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Price), global::G2Rail.Protobuf.Price.Parser, new[]{ "Currency", "Cents" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Train), global::G2Rail.Protobuf.Train.Parser, new[]{ "From", "To", "Number", "Type", "HelpUrl", "Departure", "Arrival" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Availability), global::G2Rail.Protobuf.Availability.Parser, new[]{ "Seats" }, null, null, null, null)
           }));
     }
     #endregion
@@ -371,135 +359,6 @@ namespace G2Rail.Protobuf {
 
   }
 
-  public sealed partial class AsyncKeyResponse : pb::IMessage<AsyncKeyResponse> {
-    private static readonly pb::MessageParser<AsyncKeyResponse> _parser = new pb::MessageParser<AsyncKeyResponse>(() => new AsyncKeyResponse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<AsyncKeyResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AsyncKeyResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AsyncKeyResponse(AsyncKeyResponse other) : this() {
-      asyncKey_ = other.asyncKey_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AsyncKeyResponse Clone() {
-      return new AsyncKeyResponse(this);
-    }
-
-    /// <summary>Field number for the "async_key" field.</summary>
-    public const int AsyncKeyFieldNumber = 1;
-    private string asyncKey_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string AsyncKey {
-      get { return asyncKey_; }
-      set {
-        asyncKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as AsyncKeyResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(AsyncKeyResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (AsyncKey != other.AsyncKey) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (AsyncKey.Length != 0) hash ^= AsyncKey.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (AsyncKey.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(AsyncKey);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (AsyncKey.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AsyncKey);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(AsyncKeyResponse other) {
-      if (other == null) {
-        return;
-      }
-      if (other.AsyncKey.Length != 0) {
-        AsyncKey = other.AsyncKey;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            AsyncKey = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   public sealed partial class OnlineSolutionsAsyncQueryRequest : pb::IMessage<OnlineSolutionsAsyncQueryRequest> {
     private static readonly pb::MessageParser<OnlineSolutionsAsyncQueryRequest> _parser = new pb::MessageParser<OnlineSolutionsAsyncQueryRequest>(() => new OnlineSolutionsAsyncQueryRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -508,7 +367,7 @@ namespace G2Rail.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[2]; }
+      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -637,7 +496,7 @@ namespace G2Rail.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[3]; }
+      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -758,7 +617,7 @@ namespace G2Rail.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[4]; }
+      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -933,320 +792,6 @@ namespace G2Rail.Protobuf {
 
   }
 
-  public sealed partial class Railway : pb::IMessage<Railway> {
-    private static readonly pb::MessageParser<Railway> _parser = new pb::MessageParser<Railway>(() => new Railway());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Railway> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[5]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Railway() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Railway(Railway other) : this() {
-      code_ = other.code_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Railway Clone() {
-      return new Railway(this);
-    }
-
-    /// <summary>Field number for the "code" field.</summary>
-    public const int CodeFieldNumber = 1;
-    private string code_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Code {
-      get { return code_; }
-      set {
-        code_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Railway);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Railway other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Code != other.Code) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Code.Length != 0) hash ^= Code.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Code.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Code);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Code.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Code);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Railway other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Code.Length != 0) {
-        Code = other.Code;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Code = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Station : pb::IMessage<Station> {
-    private static readonly pb::MessageParser<Station> _parser = new pb::MessageParser<Station>(() => new Station());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Station> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[6]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Station() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Station(Station other) : this() {
-      name_ = other.name_;
-      code_ = other.code_;
-      helpUrl_ = other.helpUrl_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Station Clone() {
-      return new Station(this);
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "code" field.</summary>
-    public const int CodeFieldNumber = 2;
-    private string code_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Code {
-      get { return code_; }
-      set {
-        code_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "help_url" field.</summary>
-    public const int HelpUrlFieldNumber = 3;
-    private string helpUrl_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string HelpUrl {
-      get { return helpUrl_; }
-      set {
-        helpUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Station);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Station other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Name != other.Name) return false;
-      if (Code != other.Code) return false;
-      if (HelpUrl != other.HelpUrl) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Code.Length != 0) hash ^= Code.GetHashCode();
-      if (HelpUrl.Length != 0) hash ^= HelpUrl.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
-      }
-      if (Code.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Code);
-      }
-      if (HelpUrl.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(HelpUrl);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (Code.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Code);
-      }
-      if (HelpUrl.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(HelpUrl);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Station other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.Code.Length != 0) {
-        Code = other.Code;
-      }
-      if (other.HelpUrl.Length != 0) {
-        HelpUrl = other.HelpUrl;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Name = input.ReadString();
-            break;
-          }
-          case 18: {
-            Code = input.ReadString();
-            break;
-          }
-          case 26: {
-            HelpUrl = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   public sealed partial class Duration : pb::IMessage<Duration> {
     private static readonly pb::MessageParser<Duration> _parser = new pb::MessageParser<Duration>(() => new Duration());
     private pb::UnknownFieldSet _unknownFields;
@@ -1255,7 +800,7 @@ namespace G2Rail.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[7]; }
+      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1412,7 +957,7 @@ namespace G2Rail.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[8]; }
+      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1691,7 +1236,7 @@ namespace G2Rail.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[9]; }
+      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1916,7 +1461,7 @@ namespace G2Rail.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[10]; }
+      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2317,7 +1862,7 @@ namespace G2Rail.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[11]; }
+      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3360,7 +2905,7 @@ namespace G2Rail.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[12]; }
+      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3473,472 +3018,6 @@ namespace G2Rail.Protobuf {
             break;
           case 8: {
             Seats = input.ReadUInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Price : pb::IMessage<Price> {
-    private static readonly pb::MessageParser<Price> _parser = new pb::MessageParser<Price>(() => new Price());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Price> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[13]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Price() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Price(Price other) : this() {
-      currency_ = other.currency_;
-      cents_ = other.cents_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Price Clone() {
-      return new Price(this);
-    }
-
-    /// <summary>Field number for the "currency" field.</summary>
-    public const int CurrencyFieldNumber = 1;
-    private string currency_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Currency {
-      get { return currency_; }
-      set {
-        currency_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "cents" field.</summary>
-    public const int CentsFieldNumber = 2;
-    private uint cents_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public uint Cents {
-      get { return cents_; }
-      set {
-        cents_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Price);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Price other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Currency != other.Currency) return false;
-      if (Cents != other.Cents) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Currency.Length != 0) hash ^= Currency.GetHashCode();
-      if (Cents != 0) hash ^= Cents.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Currency.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Currency);
-      }
-      if (Cents != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Cents);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Currency.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Currency);
-      }
-      if (Cents != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Cents);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Price other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Currency.Length != 0) {
-        Currency = other.Currency;
-      }
-      if (other.Cents != 0) {
-        Cents = other.Cents;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Currency = input.ReadString();
-            break;
-          }
-          case 16: {
-            Cents = input.ReadUInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Train : pb::IMessage<Train> {
-    private static readonly pb::MessageParser<Train> _parser = new pb::MessageParser<Train>(() => new Train());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Train> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::G2Rail.Protobuf.OnlineSolutionsReflection.Descriptor.MessageTypes[14]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Train() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Train(Train other) : this() {
-      from_ = other.from_ != null ? other.from_.Clone() : null;
-      to_ = other.to_ != null ? other.to_.Clone() : null;
-      number_ = other.number_;
-      type_ = other.type_;
-      helpUrl_ = other.helpUrl_;
-      departure_ = other.departure_;
-      arrival_ = other.arrival_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Train Clone() {
-      return new Train(this);
-    }
-
-    /// <summary>Field number for the "from" field.</summary>
-    public const int FromFieldNumber = 1;
-    private global::G2Rail.Protobuf.Station from_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::G2Rail.Protobuf.Station From {
-      get { return from_; }
-      set {
-        from_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "to" field.</summary>
-    public const int ToFieldNumber = 2;
-    private global::G2Rail.Protobuf.Station to_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::G2Rail.Protobuf.Station To {
-      get { return to_; }
-      set {
-        to_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "number" field.</summary>
-    public const int NumberFieldNumber = 3;
-    private string number_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Number {
-      get { return number_; }
-      set {
-        number_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 4;
-    private string type_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Type {
-      get { return type_; }
-      set {
-        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "help_url" field.</summary>
-    public const int HelpUrlFieldNumber = 5;
-    private string helpUrl_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string HelpUrl {
-      get { return helpUrl_; }
-      set {
-        helpUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "departure" field.</summary>
-    public const int DepartureFieldNumber = 6;
-    private string departure_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Departure {
-      get { return departure_; }
-      set {
-        departure_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "arrival" field.</summary>
-    public const int ArrivalFieldNumber = 7;
-    private string arrival_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Arrival {
-      get { return arrival_; }
-      set {
-        arrival_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Train);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Train other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(From, other.From)) return false;
-      if (!object.Equals(To, other.To)) return false;
-      if (Number != other.Number) return false;
-      if (Type != other.Type) return false;
-      if (HelpUrl != other.HelpUrl) return false;
-      if (Departure != other.Departure) return false;
-      if (Arrival != other.Arrival) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (from_ != null) hash ^= From.GetHashCode();
-      if (to_ != null) hash ^= To.GetHashCode();
-      if (Number.Length != 0) hash ^= Number.GetHashCode();
-      if (Type.Length != 0) hash ^= Type.GetHashCode();
-      if (HelpUrl.Length != 0) hash ^= HelpUrl.GetHashCode();
-      if (Departure.Length != 0) hash ^= Departure.GetHashCode();
-      if (Arrival.Length != 0) hash ^= Arrival.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (from_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(From);
-      }
-      if (to_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(To);
-      }
-      if (Number.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Number);
-      }
-      if (Type.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Type);
-      }
-      if (HelpUrl.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(HelpUrl);
-      }
-      if (Departure.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Departure);
-      }
-      if (Arrival.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Arrival);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (from_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(From);
-      }
-      if (to_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(To);
-      }
-      if (Number.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Number);
-      }
-      if (Type.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
-      }
-      if (HelpUrl.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(HelpUrl);
-      }
-      if (Departure.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Departure);
-      }
-      if (Arrival.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Arrival);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Train other) {
-      if (other == null) {
-        return;
-      }
-      if (other.from_ != null) {
-        if (from_ == null) {
-          From = new global::G2Rail.Protobuf.Station();
-        }
-        From.MergeFrom(other.From);
-      }
-      if (other.to_ != null) {
-        if (to_ == null) {
-          To = new global::G2Rail.Protobuf.Station();
-        }
-        To.MergeFrom(other.To);
-      }
-      if (other.Number.Length != 0) {
-        Number = other.Number;
-      }
-      if (other.Type.Length != 0) {
-        Type = other.Type;
-      }
-      if (other.HelpUrl.Length != 0) {
-        HelpUrl = other.HelpUrl;
-      }
-      if (other.Departure.Length != 0) {
-        Departure = other.Departure;
-      }
-      if (other.Arrival.Length != 0) {
-        Arrival = other.Arrival;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            if (from_ == null) {
-              From = new global::G2Rail.Protobuf.Station();
-            }
-            input.ReadMessage(From);
-            break;
-          }
-          case 18: {
-            if (to_ == null) {
-              To = new global::G2Rail.Protobuf.Station();
-            }
-            input.ReadMessage(To);
-            break;
-          }
-          case 26: {
-            Number = input.ReadString();
-            break;
-          }
-          case 34: {
-            Type = input.ReadString();
-            break;
-          }
-          case 42: {
-            HelpUrl = input.ReadString();
-            break;
-          }
-          case 50: {
-            Departure = input.ReadString();
-            break;
-          }
-          case 58: {
-            Arrival = input.ReadString();
             break;
           }
         }

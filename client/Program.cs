@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Threading;
-using System.Threading.Tasks;
 using client.Interceptors;
-using G2Rail.Protobuf;
-using Google.Protobuf;
 using Grpc.Core.Interceptors;
 using Grpc.Net.Client;
 using System.Linq;
@@ -29,7 +26,10 @@ namespace client
             Console.WriteLine(string.Format("http://{0}:{1}", host, port));
             using (var channel = GrpcChannel.ForAddress(String.Format("http://{0}:{1}", host, port)))
             {
-                SearchRequest searchRequest = new SearchRequest
+                /**
+                 * Initiate Search Request
+                 */
+                G2Rail.Protobuf.SearchRequest searchRequest = new G2Rail.Protobuf.SearchRequest
                 {
                     From = "BERLIN",
                     To = "FRANKFURT",
@@ -40,7 +40,7 @@ namespace client
                 };
 
                 var authenticationInterceptor = new AuthenticationInterceptor(apiKey, new MessageSignature(apiKey, apiSecret, searchRequest));
-                var client = new OnlineSolutions.OnlineSolutionsClient(channel.Intercept(authenticationInterceptor));
+                var client = new G2Rail.Protobuf.OnlineSolutions.OnlineSolutionsClient(channel.Intercept(authenticationInterceptor));
 
                 var asyncResponse = client.Search(searchRequest);
                 var asyncKey = asyncResponse.AsyncKey;
@@ -50,12 +50,14 @@ namespace client
                     Console.WriteLine("Async Key Fetch Error");
                     return;
                 }
-
-                var queryOnlineSolutionRequest = new OnlineSolutionsAsyncQueryRequest { AsyncKey = asyncKey };
+                /**
+                 * Retrieve Search Response
+                 */
+                var queryOnlineSolutionRequest = new G2Rail.Protobuf.OnlineSolutionsAsyncQueryRequest { AsyncKey = asyncKey };
                 authenticationInterceptor = new AuthenticationInterceptor(apiKey, new MessageSignature(apiKey, apiSecret, queryOnlineSolutionRequest));
 
-                client = new OnlineSolutions.OnlineSolutionsClient(channel.Intercept(authenticationInterceptor));
-                OnlineSolutionsResponse searchResponse;
+                client = new G2Rail.Protobuf.OnlineSolutions.OnlineSolutionsClient(channel.Intercept(authenticationInterceptor));
+                G2Rail.Protobuf.OnlineSolutionsResponse searchResponse;
 
                 do
                 {
@@ -64,9 +66,55 @@ namespace client
                     Thread.Sleep(2000);
                 } while (searchResponse.RailwaySolutions.Any(x => x.Loading));
 
+
+                /**
+                 *  Start Booking by find the first booking code.
+                 */
+                var bookingCode = searchResponse.RailwaySolutions.ElementAt<G2Rail.Protobuf.RailwaySolution>(0).Solutions[0].Sections[0].Offers[1].Services[0].BookingCode;
+
+
+                var bookRequest = new G2Rail.Protobuf.BookRequest
+                {
+                    Sections = { bookingCode },
+                    Passengers =
+                    {
+                        new G2Rail.Protobuf.Passenger
+                        {
+                            Gender =   G2Rail.Protobuf.Passenger.Types.Gender.Male,
+			                FirstName = "QINWEN",
+			                LastName = "SHI",
+			                Passport = "E12341813",
+			                Phone = "+8527892123",
+			                Email = "wen@g2rail.com",
+			                Birthdate = "1986-06-01",
+                        }
+                    }
+
+                };
+
+                authenticationInterceptor = new AuthenticationInterceptor(apiKey, new MessageSignature(apiKey, apiSecret, bookRequest));
+                var onlineOrderClient = new G2Rail.Protobuf.OnlineOrders.OnlineOrdersClient(channel.Intercept(authenticationInterceptor));
+                var bookAsyncKey = onlineOrderClient.Book(bookRequest).AsyncKey;
+
+                Console.WriteLine("Order will be at :" + bookAsyncKey);
+
+                /*
+                 * Retireve Online Order
+                 */
+                var queryOnlineOrderRequest = new G2Rail.Protobuf.OnlineOrderAsyncQueryRequest { AsyncKey = bookAsyncKey };
+                G2Rail.Protobuf.OnlineOrderResponse onlineOrderResponse;
+                do
+                {
+                    Console.WriteLine("Load Book Result From: " + bookAsyncKey);
+                    authenticationInterceptor = new AuthenticationInterceptor(apiKey, new MessageSignature(apiKey, apiSecret, queryOnlineOrderRequest));
+                    onlineOrderClient = new G2Rail.Protobuf.OnlineOrders.OnlineOrdersClient(channel.Intercept(authenticationInterceptor));
+                    onlineOrderResponse = onlineOrderClient.QueryAsyncOnlineOrder(queryOnlineOrderRequest);
+                    Thread.Sleep(3000);
+                } while (onlineOrderResponse.Loading);
+
+                Console.WriteLine(onlineOrderResponse.ToString());
             }
 
-            
             Console.ReadKey();
             
         }

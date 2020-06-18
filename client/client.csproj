@@ -18,17 +18,9 @@
   <ItemGroup>
     <None Remove="Protos\OnlineSolutions.proto" />
     <None Remove=".env" />
-  </ItemGroup>
-  <ItemGroup>
-    <Protobuf Include="Protos\OnlineSolutions.proto">
-      <GrpcServices>client</GrpcServices>
-      <Access>public</Access>
-      <ProtoCompile>true</ProtoCompile>
-      <CompileOutputs>false</CompileOutputs>
-      <OutputDir>./Generated/</OutputDir>
-      <Generator></Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Protobuf>
+    <None Remove="Protos\OnlineSolutions.proto" />
+    <None Remove="Protos\OnlineOrders.proto" />
+    <None Remove="Protos\Common.proto" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interceptors\" />
@@ -40,5 +32,34 @@
     <Content Include=".env">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Protobuf Include="Protos\OnlineSolutions.proto">
+      <GrpcServices>client</GrpcServices>
+      <Access>public</Access>
+      <ProtoCompile>true</ProtoCompile>
+      <CompileOutputs>false</CompileOutputs>
+      <OutputDir>./Generated/</OutputDir>
+      <Generator></Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Protobuf>
+    <Protobuf Include="Protos\OnlineOrders.proto">
+      <GrpcServices>client</GrpcServices>
+      <Access>public</Access>
+      <ProtoCompile>true</ProtoCompile>
+      <CompileOutputs>false</CompileOutputs>
+      <OutputDir>./Generated/</OutputDir>
+      <Generator></Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Protobuf>
+    <Protobuf Include="Protos\Common.proto">
+      <GrpcServices>client</GrpcServices>
+      <Access>public</Access>
+      <ProtoCompile>true</ProtoCompile>
+      <CompileOutputs>false</CompileOutputs>
+      <OutputDir>./Generated/</OutputDir>
+      <Generator></Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Protobuf>
   </ItemGroup>
 </Project>

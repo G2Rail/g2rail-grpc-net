@@ -49,9 +49,16 @@ namespace client.Interceptors
 
             foreach (var field in fields.InDeclarationOrder())
             {
-                //field.FieldType == Google.Protobuf.Reflection.FieldType.Bool
-                if (simpleKinds.Contains(field.FieldType)) {
-                    simpleFields[field.Name] = field.Accessor.GetValue(message);
+                if (simpleKinds.Contains(field.FieldType) && !field.IsRepeated) {
+                    if (field.FieldType == FieldType.Bool)
+                    {
+                        simpleFields[field.Name] = field.Accessor.GetValue(message).ToString().ToLower();
+                    }
+                    else
+                    {
+                        simpleFields[field.Name] = field.Accessor.GetValue(message);
+                    }
+
                 }
             }
             
@@ -65,7 +72,6 @@ namespace client.Interceptors
             {
                  hashed = string.Join(string.Empty, md5.ComputeHash(Encoding.UTF8.GetBytes(source)).Select(b => b.ToString("x2")));
             }
-            Console.WriteLine(source);
             return hashed;
         }
 
