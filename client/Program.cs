@@ -113,6 +113,39 @@ namespace client
                 } while (onlineOrderResponse.Loading);
 
                 Console.WriteLine(onlineOrderResponse.ToString());
+
+                /**
+                 *  Confirm the order and issue tickets.
+                 */
+                
+
+                var confirmRequest = new G2Rail.Protobuf.ConfirmRequest
+                {
+                    OrderId = onlineOrderResponse.Id
+
+                };
+
+                authenticationInterceptor = new AuthenticationInterceptor(apiKey, new MessageSignature(apiKey, apiSecret, confirmRequest));
+                var onlineConfirmationClient = new G2Rail.Protobuf.OnlineConfirmations.OnlineConfirmationsClient(channel.Intercept(authenticationInterceptor));
+                var confirmationAsyncKey = onlineConfirmationClient.Confirm(confirmRequest).AsyncKey;
+
+                Console.WriteLine("Confirmation will be at :" + confirmationAsyncKey);
+
+                /*
+                 * Retireve Confirmation Result with PNR etc.
+                 */
+                var queryOnlineConfirmationRequest = new G2Rail.Protobuf.OnlineConfirmationAsyncQueryRequest { AsyncKey = confirmationAsyncKey };
+                G2Rail.Protobuf.OnlineConfirmationResponse onlineConfirmationResponse;
+                do
+                {
+                    Console.WriteLine("Load Confirm Result From: " + bookAsyncKey);
+                    authenticationInterceptor = new AuthenticationInterceptor(apiKey, new MessageSignature(apiKey, apiSecret, queryOnlineConfirmationRequest));
+                    onlineConfirmationClient = new G2Rail.Protobuf.OnlineConfirmations.OnlineConfirmationsClient(channel.Intercept(authenticationInterceptor));
+                    onlineConfirmationResponse = onlineConfirmationClient.QueryAsyncOnlineConfirmation(queryOnlineConfirmationRequest);
+                    Thread.Sleep(3000);
+                } while (onlineConfirmationResponse.Loading);
+
+                Console.WriteLine(onlineConfirmationResponse.ToString());
             }
 
             Console.ReadKey();

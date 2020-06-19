@@ -31,9 +31,18 @@ namespace G2Rail.Protobuf {
             "bmNfa2V5GAEgASgJIpcBCgVUcmFpbhIdCgRmcm9tGAEgASgLMg8uZzJyYWls",
             "LlN0YXRpb24SGwoCdG8YAiABKAsyDy5nMnJhaWwuU3RhdGlvbhIOCgZudW1i",
             "ZXIYAyABKAkSDAoEdHlwZRgEIAEoCRIQCghoZWxwX3VybBgFIAEoCRIRCglk",
-            "ZXBhcnR1cmUYBiABKAkSDwoHYXJyaXZhbBgHIAEoCUI/Cg5pby5ncnBjLmcy",
-            "cmFpbEIRRzJSYWlsQ29tbW9uUHJvdG9QAVoGZzJyYWlsqgIPRzJSYWlsLlBy",
-            "b3RvYnVmYgZwcm90bzM="));
+            "ZXBhcnR1cmUYBiABKAkSDwoHYXJyaXZhbBgHIAEoCSJuCgZUaWNrZXQSCgoC",
+            "aWQYASABKAkSHQoEZnJvbRgCIAEoCzIPLmcycmFpbC5TdGF0aW9uEhsKAnRv",
+            "GAMgASgLMg8uZzJyYWlsLlN0YXRpb24SHAoFcHJpY2UYBCABKAsyDS5nMnJh",
+            "aWwuUHJpY2UiaAoLUHJpY2VEZXRhaWwSCgoCaWQYASABKAkSHQoGYW1vdW50",
+            "GAIgASgLMg0uZzJyYWlsLlByaWNlEgwKBHR5cGUYAyABKAkSEAoIY2F0ZWdv",
+            "cnkYBCABKAkSDgoGdGFyZ2V0GAUgASgJIssBCglQYXNzZW5nZXISKAoGZ2Vu",
+            "ZGVyGAEgASgOMhguZzJyYWlsLlBhc3Nlbmdlci5HZW5kZXISCgoCaWQYCCAB",
+            "KAkSDQoFcGhvbmUYAiABKAkSEQoJbGFzdF9uYW1lGAMgASgJEhIKCmZpcnN0",
+            "X25hbWUYBCABKAkSEQoJYmlydGhkYXRlGAUgASgJEg0KBWVtYWlsGAYgASgJ",
+            "EhAKCHBhc3Nwb3J0GAcgASgJIh4KBkdlbmRlchIICgRtYWxlEAASCgoGZmVt",
+            "YWxlEAFCPwoOaW8uZ3JwYy5nMnJhaWxCEUcyUmFpbENvbW1vblByb3RvUAFa",
+            "BmcycmFpbKoCD0cyUmFpbC5Qcm90b2J1ZmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,7 +50,10 @@ namespace G2Rail.Protobuf {
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Station), global::G2Rail.Protobuf.Station.Parser, new[]{ "Name", "Code", "HelpUrl" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Price), global::G2Rail.Protobuf.Price.Parser, new[]{ "Currency", "Cents" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.AsyncKeyResponse), global::G2Rail.Protobuf.AsyncKeyResponse.Parser, new[]{ "AsyncKey" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Train), global::G2Rail.Protobuf.Train.Parser, new[]{ "From", "To", "Number", "Type", "HelpUrl", "Departure", "Arrival" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Train), global::G2Rail.Protobuf.Train.Parser, new[]{ "From", "To", "Number", "Type", "HelpUrl", "Departure", "Arrival" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Ticket), global::G2Rail.Protobuf.Ticket.Parser, new[]{ "Id", "From", "To", "Price" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.PriceDetail), global::G2Rail.Protobuf.PriceDetail.Parser, new[]{ "Id", "Amount", "Type", "Category", "Target" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::G2Rail.Protobuf.Passenger), global::G2Rail.Protobuf.Passenger.Parser, new[]{ "Gender", "Id", "Phone", "LastName", "FirstName", "Birthdate", "Email", "Passport" }, null, new[]{ typeof(global::G2Rail.Protobuf.Passenger.Types.Gender) }, null, null)
           }));
     }
     #endregion
@@ -954,6 +966,821 @@ namespace G2Rail.Protobuf {
         }
       }
     }
+
+  }
+
+  public sealed partial class Ticket : pb::IMessage<Ticket> {
+    private static readonly pb::MessageParser<Ticket> _parser = new pb::MessageParser<Ticket>(() => new Ticket());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Ticket> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::G2Rail.Protobuf.CommonReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Ticket() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Ticket(Ticket other) : this() {
+      id_ = other.id_;
+      from_ = other.from_ != null ? other.from_.Clone() : null;
+      to_ = other.to_ != null ? other.to_.Clone() : null;
+      price_ = other.price_ != null ? other.price_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Ticket Clone() {
+      return new Ticket(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "from" field.</summary>
+    public const int FromFieldNumber = 2;
+    private global::G2Rail.Protobuf.Station from_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::G2Rail.Protobuf.Station From {
+      get { return from_; }
+      set {
+        from_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "to" field.</summary>
+    public const int ToFieldNumber = 3;
+    private global::G2Rail.Protobuf.Station to_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::G2Rail.Protobuf.Station To {
+      get { return to_; }
+      set {
+        to_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "price" field.</summary>
+    public const int PriceFieldNumber = 4;
+    private global::G2Rail.Protobuf.Price price_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::G2Rail.Protobuf.Price Price {
+      get { return price_; }
+      set {
+        price_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Ticket);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Ticket other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (!object.Equals(From, other.From)) return false;
+      if (!object.Equals(To, other.To)) return false;
+      if (!object.Equals(Price, other.Price)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (from_ != null) hash ^= From.GetHashCode();
+      if (to_ != null) hash ^= To.GetHashCode();
+      if (price_ != null) hash ^= Price.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (from_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(From);
+      }
+      if (to_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(To);
+      }
+      if (price_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Price);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (from_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(From);
+      }
+      if (to_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(To);
+      }
+      if (price_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Price);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Ticket other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.from_ != null) {
+        if (from_ == null) {
+          From = new global::G2Rail.Protobuf.Station();
+        }
+        From.MergeFrom(other.From);
+      }
+      if (other.to_ != null) {
+        if (to_ == null) {
+          To = new global::G2Rail.Protobuf.Station();
+        }
+        To.MergeFrom(other.To);
+      }
+      if (other.price_ != null) {
+        if (price_ == null) {
+          Price = new global::G2Rail.Protobuf.Price();
+        }
+        Price.MergeFrom(other.Price);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (from_ == null) {
+              From = new global::G2Rail.Protobuf.Station();
+            }
+            input.ReadMessage(From);
+            break;
+          }
+          case 26: {
+            if (to_ == null) {
+              To = new global::G2Rail.Protobuf.Station();
+            }
+            input.ReadMessage(To);
+            break;
+          }
+          case 34: {
+            if (price_ == null) {
+              Price = new global::G2Rail.Protobuf.Price();
+            }
+            input.ReadMessage(Price);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class PriceDetail : pb::IMessage<PriceDetail> {
+    private static readonly pb::MessageParser<PriceDetail> _parser = new pb::MessageParser<PriceDetail>(() => new PriceDetail());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PriceDetail> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::G2Rail.Protobuf.CommonReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PriceDetail() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PriceDetail(PriceDetail other) : this() {
+      id_ = other.id_;
+      amount_ = other.amount_ != null ? other.amount_.Clone() : null;
+      type_ = other.type_;
+      category_ = other.category_;
+      target_ = other.target_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PriceDetail Clone() {
+      return new PriceDetail(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "amount" field.</summary>
+    public const int AmountFieldNumber = 2;
+    private global::G2Rail.Protobuf.Price amount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::G2Rail.Protobuf.Price Amount {
+      get { return amount_; }
+      set {
+        amount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 3;
+    private string type_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Type {
+      get { return type_; }
+      set {
+        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "category" field.</summary>
+    public const int CategoryFieldNumber = 4;
+    private string category_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Category {
+      get { return category_; }
+      set {
+        category_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "target" field.</summary>
+    public const int TargetFieldNumber = 5;
+    private string target_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Target {
+      get { return target_; }
+      set {
+        target_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PriceDetail);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PriceDetail other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (!object.Equals(Amount, other.Amount)) return false;
+      if (Type != other.Type) return false;
+      if (Category != other.Category) return false;
+      if (Target != other.Target) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (amount_ != null) hash ^= Amount.GetHashCode();
+      if (Type.Length != 0) hash ^= Type.GetHashCode();
+      if (Category.Length != 0) hash ^= Category.GetHashCode();
+      if (Target.Length != 0) hash ^= Target.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (amount_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Amount);
+      }
+      if (Type.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Type);
+      }
+      if (Category.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Category);
+      }
+      if (Target.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Target);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (amount_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Amount);
+      }
+      if (Type.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
+      }
+      if (Category.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Category);
+      }
+      if (Target.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Target);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PriceDetail other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.amount_ != null) {
+        if (amount_ == null) {
+          Amount = new global::G2Rail.Protobuf.Price();
+        }
+        Amount.MergeFrom(other.Amount);
+      }
+      if (other.Type.Length != 0) {
+        Type = other.Type;
+      }
+      if (other.Category.Length != 0) {
+        Category = other.Category;
+      }
+      if (other.Target.Length != 0) {
+        Target = other.Target;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (amount_ == null) {
+              Amount = new global::G2Rail.Protobuf.Price();
+            }
+            input.ReadMessage(Amount);
+            break;
+          }
+          case 26: {
+            Type = input.ReadString();
+            break;
+          }
+          case 34: {
+            Category = input.ReadString();
+            break;
+          }
+          case 42: {
+            Target = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Passenger : pb::IMessage<Passenger> {
+    private static readonly pb::MessageParser<Passenger> _parser = new pb::MessageParser<Passenger>(() => new Passenger());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Passenger> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::G2Rail.Protobuf.CommonReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Passenger() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Passenger(Passenger other) : this() {
+      gender_ = other.gender_;
+      id_ = other.id_;
+      phone_ = other.phone_;
+      lastName_ = other.lastName_;
+      firstName_ = other.firstName_;
+      birthdate_ = other.birthdate_;
+      email_ = other.email_;
+      passport_ = other.passport_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Passenger Clone() {
+      return new Passenger(this);
+    }
+
+    /// <summary>Field number for the "gender" field.</summary>
+    public const int GenderFieldNumber = 1;
+    private global::G2Rail.Protobuf.Passenger.Types.Gender gender_ = global::G2Rail.Protobuf.Passenger.Types.Gender.Male;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::G2Rail.Protobuf.Passenger.Types.Gender Gender {
+      get { return gender_; }
+      set {
+        gender_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 8;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "phone" field.</summary>
+    public const int PhoneFieldNumber = 2;
+    private string phone_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Phone {
+      get { return phone_; }
+      set {
+        phone_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "last_name" field.</summary>
+    public const int LastNameFieldNumber = 3;
+    private string lastName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string LastName {
+      get { return lastName_; }
+      set {
+        lastName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "first_name" field.</summary>
+    public const int FirstNameFieldNumber = 4;
+    private string firstName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string FirstName {
+      get { return firstName_; }
+      set {
+        firstName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "birthdate" field.</summary>
+    public const int BirthdateFieldNumber = 5;
+    private string birthdate_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Birthdate {
+      get { return birthdate_; }
+      set {
+        birthdate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "email" field.</summary>
+    public const int EmailFieldNumber = 6;
+    private string email_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Email {
+      get { return email_; }
+      set {
+        email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "passport" field.</summary>
+    public const int PassportFieldNumber = 7;
+    private string passport_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Passport {
+      get { return passport_; }
+      set {
+        passport_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Passenger);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Passenger other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Gender != other.Gender) return false;
+      if (Id != other.Id) return false;
+      if (Phone != other.Phone) return false;
+      if (LastName != other.LastName) return false;
+      if (FirstName != other.FirstName) return false;
+      if (Birthdate != other.Birthdate) return false;
+      if (Email != other.Email) return false;
+      if (Passport != other.Passport) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Gender != global::G2Rail.Protobuf.Passenger.Types.Gender.Male) hash ^= Gender.GetHashCode();
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Phone.Length != 0) hash ^= Phone.GetHashCode();
+      if (LastName.Length != 0) hash ^= LastName.GetHashCode();
+      if (FirstName.Length != 0) hash ^= FirstName.GetHashCode();
+      if (Birthdate.Length != 0) hash ^= Birthdate.GetHashCode();
+      if (Email.Length != 0) hash ^= Email.GetHashCode();
+      if (Passport.Length != 0) hash ^= Passport.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Gender != global::G2Rail.Protobuf.Passenger.Types.Gender.Male) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Gender);
+      }
+      if (Phone.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Phone);
+      }
+      if (LastName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(LastName);
+      }
+      if (FirstName.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(FirstName);
+      }
+      if (Birthdate.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Birthdate);
+      }
+      if (Email.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Email);
+      }
+      if (Passport.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Passport);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Gender != global::G2Rail.Protobuf.Passenger.Types.Gender.Male) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Gender);
+      }
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Phone.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Phone);
+      }
+      if (LastName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LastName);
+      }
+      if (FirstName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FirstName);
+      }
+      if (Birthdate.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Birthdate);
+      }
+      if (Email.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
+      }
+      if (Passport.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Passport);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Passenger other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Gender != global::G2Rail.Protobuf.Passenger.Types.Gender.Male) {
+        Gender = other.Gender;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.Phone.Length != 0) {
+        Phone = other.Phone;
+      }
+      if (other.LastName.Length != 0) {
+        LastName = other.LastName;
+      }
+      if (other.FirstName.Length != 0) {
+        FirstName = other.FirstName;
+      }
+      if (other.Birthdate.Length != 0) {
+        Birthdate = other.Birthdate;
+      }
+      if (other.Email.Length != 0) {
+        Email = other.Email;
+      }
+      if (other.Passport.Length != 0) {
+        Passport = other.Passport;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Gender = (global::G2Rail.Protobuf.Passenger.Types.Gender) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Phone = input.ReadString();
+            break;
+          }
+          case 26: {
+            LastName = input.ReadString();
+            break;
+          }
+          case 34: {
+            FirstName = input.ReadString();
+            break;
+          }
+          case 42: {
+            Birthdate = input.ReadString();
+            break;
+          }
+          case 50: {
+            Email = input.ReadString();
+            break;
+          }
+          case 58: {
+            Passport = input.ReadString();
+            break;
+          }
+          case 66: {
+            Id = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the Passenger message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public enum Gender {
+        [pbr::OriginalName("male")] Male = 0,
+        [pbr::OriginalName("female")] Female = 1,
+      }
+
+    }
+    #endregion
 
   }
 

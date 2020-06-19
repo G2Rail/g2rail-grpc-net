@@ -9,7 +9,7 @@ using grpc = global::Grpc.Core;
 
 namespace G2Rail.Protobuf {
   /// <summary>
-  /// Interface exported by the server.
+  /// Interface to make a reservation.
   /// </summary>
   public static partial class OnlineOrders
   {
@@ -64,7 +64,7 @@ namespace G2Rail.Protobuf {
       }
 
       /// <summary>
-      /// Send a search request
+      /// Send a book request
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -76,7 +76,7 @@ namespace G2Rail.Protobuf {
         return Book(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Send a search request
+      /// Send a book request
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -86,7 +86,7 @@ namespace G2Rail.Protobuf {
         return CallInvoker.BlockingUnaryCall(__Method_Book, null, options, request);
       }
       /// <summary>
-      /// Send a search request
+      /// Send a book request
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -98,7 +98,7 @@ namespace G2Rail.Protobuf {
         return BookAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Send a search request
+      /// Send a book request
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
