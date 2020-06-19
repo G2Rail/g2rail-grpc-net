@@ -23,6 +23,7 @@
     <None Remove="Protos\Common.proto" />
     <None Remove="Protos\Common.proto" />
     <None Remove="Protos\OnlineConfirmations.proto" />
+    <None Remove="Protos\Common %28copy%29.proto" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interceptors\" />
@@ -64,6 +65,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Protobuf>
     <Protobuf Include="Protos\OnlineConfirmations.proto">
+      <GrpcServices>client</GrpcServices>
+      <Access>public</Access>
+      <ProtoCompile>true</ProtoCompile>
+      <CompileOutputs>false</CompileOutputs>
+      <OutputDir>./Generated/</OutputDir>
+      <Generator></Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Protobuf>
+    <Protobuf Include="Protos\OnlineTickets.proto">
       <GrpcServices>client</GrpcServices>
       <Access>public</Access>
       <ProtoCompile>true</ProtoCompile>

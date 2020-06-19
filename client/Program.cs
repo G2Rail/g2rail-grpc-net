@@ -144,12 +144,18 @@ namespace client
                     onlineConfirmationResponse = onlineConfirmationClient.QueryAsyncOnlineConfirmation(queryOnlineConfirmationRequest);
                     Thread.Sleep(3000);
                 } while (onlineConfirmationResponse.Loading);
-
                 Console.WriteLine(onlineConfirmationResponse.ToString());
-            }
 
-            Console.ReadKey();
-            
+                /*
+                 * Download Tickets
+                 */
+                var downloadRequest = new G2Rail.Protobuf.DownloadRequest { OrderId = onlineOrderResponse.Id };
+                authenticationInterceptor = new AuthenticationInterceptor(apiKey, new MessageSignature(apiKey, apiSecret, confirmRequest));
+                var onlineTicketsClient = new G2Rail.Protobuf.OnlineTickets.OnlineTicketsClient(channel.Intercept(authenticationInterceptor));
+                var onlineTicketsResponse = onlineTicketsClient.Download(downloadRequest);
+                Console.WriteLine("Your tickets are: ");
+                Console.WriteLine(onlineTicketsResponse.ToString());
+            }
         }
     }
 }
