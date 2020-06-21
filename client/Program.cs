@@ -26,6 +26,22 @@ namespace client
             Console.WriteLine(string.Format("http://{0}:{1}", host, port));
             using (var channel = GrpcChannel.ForAddress(String.Format("http://{0}:{1}", host, port)))
             {
+
+                /**
+                 * Initiate Suggestion
+                 */
+                G2Rail.Protobuf.SuggestionRequest suggestionRequest = new G2Rail.Protobuf.SuggestionRequest
+                {
+                    Query = "BERLIN"
+                };
+
+                var authenticationInterceptor = new AuthenticationInterceptor(apiKey, new MessageSignature(apiKey, apiSecret, suggestionRequest));
+                var suggestionClient = new G2Rail.Protobuf.Suggestions.SuggestionsClient(channel.Intercept(authenticationInterceptor));
+
+                var suggestions = suggestionClient.Query(suggestionRequest);
+
+                Console.WriteLine(suggestions.ToString());
+
                 /**
                  * Initiate Search Request
                  */
@@ -39,7 +55,7 @@ namespace client
                     Child = 0
                 };
 
-                var authenticationInterceptor = new AuthenticationInterceptor(apiKey, new MessageSignature(apiKey, apiSecret, searchRequest));
+                authenticationInterceptor = new AuthenticationInterceptor(apiKey, new MessageSignature(apiKey, apiSecret, searchRequest));
                 var client = new G2Rail.Protobuf.OnlineSolutions.OnlineSolutionsClient(channel.Intercept(authenticationInterceptor));
 
                 var asyncResponse = client.Search(searchRequest);
