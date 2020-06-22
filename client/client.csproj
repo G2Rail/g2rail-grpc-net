@@ -92,5 +92,14 @@
       <Generator></Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Protobuf>
+    <Protobuf Include="Protos\TrainSchedules.proto">
+      <GrpcServices>client</GrpcServices>
+      <Access>public</Access>
+      <ProtoCompile>true</ProtoCompile>
+      <CompileOutputs>false</CompileOutputs>
+      <OutputDir>./Generated/</OutputDir>
+      <Generator></Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Protobuf>
   </ItemGroup>
 </Project>

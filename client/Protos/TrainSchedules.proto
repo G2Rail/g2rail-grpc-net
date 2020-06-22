@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.g2rail";
+option java_outer_classname = "G2RailCommonProto";
+option csharp_namespace = "G2Rail.Protobuf";
+option go_package = "g2rail";
+
+package g2rail;
+
+message Railway {
+  string code =1;
+}
+
+message Station {
+  string name = 1;
+  string code = 2;
+  string help_url = 3;
+}
+
+message Price {
+  string currency = 1;
+  uint32 cents = 2;
+}
+
+message AsyncKeyResponse {
+  string async_key = 1;
+}
+
+message Train {
+  Station from = 1;
+  Station to = 2;
+  string number = 3;
+  string type = 4;
+  string help_url = 5;
+  string departure = 6;
+  string arrival = 7;
+}
+
+message Ticket {
+  string id = 1;
+  Station from = 2;
+  Station to = 3;
+  Price price = 4;
+}
+
+message PriceDetail {
+  string id = 1;
+  Price amount = 2;
+  string type = 3;
+  string category = 4;
+  string target = 5;
+}
+
+message Passenger {
+  enum Gender {
+    male = 0;
+    female = 1;
+  }
+  Gender gender = 1;
+  string id = 8;
+  string phone = 2;
+  string last_name = 3;
+  string first_name = 4;
+  string birthdate = 5;
+  string email = 6;
+  string passport = 7;
+}
